@@ -1,0 +1,22 @@
+# Python virtual environment
+venv/
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Docker
+*.log
+
+# Editor and OS files
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Sensitive files
+*.pem
+*.key
+*.crt
