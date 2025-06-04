@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Tabela simplificada (bitola mm² : corrente admissível A)
+# Tabela de condutores (bitola mm² : corrente admissível A)
 tabela_condutores = {
     1.5: 15,
     2.5: 21,
@@ -36,7 +36,7 @@ def escolher_bitola(corrente_max):
     return "Acima de 35 mm²", ">110 A"
 
 @app.route("/", methods=["GET", "POST"])
-def index():
+def home():
     resultado = None
     if request.method == "POST":
         potencia = float(request.form["potencia"])
@@ -62,4 +62,4 @@ def index():
     return render_template("index.html", resultado=resultado)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8086)
